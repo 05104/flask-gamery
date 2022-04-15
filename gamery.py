@@ -15,4 +15,4 @@ from controllers.users_controller import *
 from controllers.images_controller import *
 
 if __name__ == '__main__':
-app.run(debug=True)
+    app.run(debug=True)
