@@ -1,9 +1,5 @@
-from flask import Flask, render_template, request, redirect, session, flash, url_for, send_from_directory
-from models.game import Game
-from models.user import User
-from dao import GameDao, UserDao
+from flask import Flask
 import psycopg2
-import os
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
