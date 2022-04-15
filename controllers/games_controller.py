@@ -2,6 +2,7 @@ from flask import render_template, request, redirect, session, flash, url_for
 from models.game import Game
 from dao import GameDao, UserDao
 from gamery import connection, app
+import os
 
 game_dao = GameDao(connection)
 user_dao = UserDao(connection)
