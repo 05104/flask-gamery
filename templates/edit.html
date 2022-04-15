@@ -1,0 +1,30 @@
+{% extends "template.html" %}
+{% block content %}
+    <form action="{{ url_for('update') }}" method="post" enctype="multipart/form-data">
+          <figure class="thumb col-md-4">
+            <img class="img-responsive" src="{{ url_for('image', filename=banner) }}" alt="">
+            <figcaption>
+                <label for="name" class="fileContainer">
+                  Change face
+                  <input type="file" id="image" name="image" accept=".jpg">
+                </label>
+            </figcaption>
+          </figure>
+        <fieldset>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="{{game.name}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" id="category" name="category" value="{{game.category}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="console">Console</label>
+            <input type="text" id="console" name="console" value="{{game.console}}" class="form-control">
+          </div>
+          <input type="hidden" value="{{game.id}}" name="id">
+          <button type="submit" class="btn btn-primary btn-save">Save</button>
+        </fieldset>
+    </form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "template.html" %}
+{% block content %}
+
+<h2><a href="/new">New</a></h2> 
+<h2><a href="/logout">Logout</a></h2> 
+    <table class="table table-striped table-responsive table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Console</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for game in games %}
+            <tr>
+                <td>{{ game.id }}</td>
+                <td>{{ game.name }}</td>
+                <td>{{ game.category }}</td>
+                <td>{{ game.console }}</td>
+                <td><a href="/edit/{{game.id}}">Edit</a> | <a href="/delete/{{game.id}}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
