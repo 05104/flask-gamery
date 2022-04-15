@@ -6,8 +6,7 @@ import psycopg2
 import os
 
 app = Flask(__name__)
-app.secret_key = 'gamelry'
-app.config['UPLOAD_PATH'] = os.path.dirname(os.path.abspath(__file__)) + '/uploads'
+app.config.from_pyfile('config.py')
 
 connection = psycopg2.connect(
 host="localhost",
