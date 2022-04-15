@@ -5,10 +5,10 @@ app = Flask(__name__)
 app.config.from_pyfile('config.py')
 
 connection = psycopg2.connect(
-host="localhost",
-database="gamery",
-user='postgres',
-password='123456')
+host=app.config['DB_HOST'],
+database=app.config['DB_NAME'],
+user=app.config['DB_USERNAME'],
+password=app.config['DB_PASSWORD'])
 
 game_dao = GameDao(connection)
 user_dao = UserDao(connection)
